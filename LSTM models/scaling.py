@@ -16,6 +16,7 @@ def create_sequences(df, seq_len):
         y.append(df['close'].iloc[i+seq_len])
     return np.array(x), np.array(y)
 
+
 seq_len = 30
 x_train, y_train = create_sequences(train_df, seq_len)
 x_test, y_test = create_sequences(test_df, seq_len)

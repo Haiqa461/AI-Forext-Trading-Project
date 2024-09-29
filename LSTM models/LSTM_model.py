@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 model = Sequential()
 model.add(LSTM(units=20, return_sequences=True, input_shape=(x_train.shape[1], 6)))
 model.add(LSTM(units=20))
+# the dense layer is 1 due to only close price is predicting if the open, high, low, close is predicting then it would be 4.
 model.add(Dense(1))
 model.compile(loss='mean_squared_error', optimizer='adam')
 
@@ -38,3 +39,5 @@ plt.ylabel('Loss')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Validation'], loc='upper left')
 plt.show()
+
+model.save('LSTM_close.keras')
