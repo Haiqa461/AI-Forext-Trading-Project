@@ -40,4 +40,4 @@ plt.xlabel('Epoch')
 plt.legend(['Train', 'Validation'], loc='upper left')
 plt.show()
 
-model.save('LSTM_close.keras')
+# model.save('LSTM_close.keras')
