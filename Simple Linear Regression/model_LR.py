@@ -2,6 +2,7 @@ from cleaning_csv import dataset
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import pickle
 
 x = dataset[['open', 'high', 'low', 'volume']]
 y = dataset[['close']]
@@ -32,3 +33,7 @@ plt.title('Actual vs Predicted Prices (Training Evaluation)')
 plt.xlabel('Actual Prediction')
 plt.ylabel('Predicted Prices')
 plt.show()
+
+with open("linear_regression.pkl", 'wb') as f:
+    pickle.dump(model, f)
+
